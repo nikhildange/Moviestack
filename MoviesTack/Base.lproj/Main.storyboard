@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Verdana.ttf">
+            <string>Verdana</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -92,42 +97,84 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="sGk-by-QQk">
             <objects>
-                <viewController id="amC-XH-hFN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewControllerID" id="amC-XH-hFN" customClass="DetailViewController" customModule="MoviesTack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j1M-dd-2Tm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FzW-zn-gxm">
-                                <rect key="frame" x="0.0" y="27.5" width="320" height="533"/>
+                                <rect key="frame" x="64" y="51.5" width="192" height="319.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FzW-zn-gxm" secondAttribute="height" multiplier="3:5" id="x5a-cl-lMl"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zar-Xd-AVi">
-                                <rect key="frame" x="16" y="537" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="August 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zar-Xd-AVi">
+                                <rect key="frame" x="16" y="396" width="128" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKY LADDER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPH-rl-90w">
+                                <rect key="frame" x="0.0" y="20" width="320" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPF-sO-TQ6">
+                                <rect key="frame" x="32" y="423.5" width="256" height="128.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️ 4.5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7g-Y6-EqJ">
+                                <rect key="frame" x="176" y="396" width="128" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zar-Xd-AVi" firstAttribute="width" secondItem="j1M-dd-2Tm" secondAttribute="width" multiplier="0.9" id="Ar2-dt-QtQ"/>
-                            <constraint firstItem="FzW-zn-gxm" firstAttribute="width" secondItem="j1M-dd-2Tm" secondAttribute="width" id="WcJ-Jb-Wae"/>
-                            <constraint firstItem="zar-Xd-AVi" firstAttribute="centerX" secondItem="Kzc-fx-QfX" secondAttribute="centerX" id="b6G-WU-Inx"/>
-                            <constraint firstItem="Kzc-fx-QfX" firstAttribute="bottom" secondItem="zar-Xd-AVi" secondAttribute="bottom" constant="10" id="gXa-Oo-7wU"/>
-                            <constraint firstItem="FzW-zn-gxm" firstAttribute="centerY" secondItem="Kzc-fx-QfX" secondAttribute="centerY" id="idj-wE-rxL"/>
+                            <constraint firstItem="ZPH-rl-90w" firstAttribute="centerX" secondItem="Kzc-fx-QfX" secondAttribute="centerX" id="052-S0-Gga"/>
+                            <constraint firstItem="c7g-Y6-EqJ" firstAttribute="width" secondItem="zar-Xd-AVi" secondAttribute="width" id="4Bh-66-yCn"/>
+                            <constraint firstItem="c7g-Y6-EqJ" firstAttribute="centerY" secondItem="zar-Xd-AVi" secondAttribute="centerY" id="53E-Ib-Uez"/>
+                            <constraint firstItem="Kzc-fx-QfX" firstAttribute="bottom" secondItem="GPF-sO-TQ6" secondAttribute="bottom" constant="16" id="58q-2M-puR"/>
+                            <constraint firstItem="FzW-zn-gxm" firstAttribute="top" secondItem="ZPH-rl-90w" secondAttribute="bottom" constant="10" id="5Sb-mz-uBP"/>
+                            <constraint firstItem="zar-Xd-AVi" firstAttribute="width" secondItem="j1M-dd-2Tm" secondAttribute="width" multiplier="0.4" id="Ar2-dt-QtQ"/>
+                            <constraint firstItem="c7g-Y6-EqJ" firstAttribute="centerX" secondItem="Kzc-fx-QfX" secondAttribute="centerX" multiplier="1.5" id="NWp-Rm-KCa"/>
+                            <constraint firstItem="ZPH-rl-90w" firstAttribute="width" secondItem="j1M-dd-2Tm" secondAttribute="width" id="Uom-2L-VDz"/>
+                            <constraint firstItem="FzW-zn-gxm" firstAttribute="width" secondItem="j1M-dd-2Tm" secondAttribute="width" multiplier="0.6" id="WcJ-Jb-Wae"/>
+                            <constraint firstItem="ZPH-rl-90w" firstAttribute="top" secondItem="Kzc-fx-QfX" secondAttribute="top" id="XC0-9l-WJP"/>
+                            <constraint firstItem="zar-Xd-AVi" firstAttribute="centerX" secondItem="Kzc-fx-QfX" secondAttribute="centerX" multiplier="0.5" id="b6G-WU-Inx"/>
+                            <constraint firstItem="GPF-sO-TQ6" firstAttribute="top" secondItem="zar-Xd-AVi" secondAttribute="bottom" constant="8" id="faC-Gm-pwU"/>
+                            <constraint firstItem="GPF-sO-TQ6" firstAttribute="centerX" secondItem="Kzc-fx-QfX" secondAttribute="centerX" id="jjn-uo-htE"/>
+                            <constraint firstItem="zar-Xd-AVi" firstAttribute="top" secondItem="FzW-zn-gxm" secondAttribute="bottom" constant="25" id="qi9-Ou-VyL"/>
+                            <constraint firstItem="GPF-sO-TQ6" firstAttribute="width" secondItem="j1M-dd-2Tm" secondAttribute="width" multiplier="0.8" id="sxW-bi-AgD"/>
                             <constraint firstItem="FzW-zn-gxm" firstAttribute="centerX" secondItem="Kzc-fx-QfX" secondAttribute="centerX" id="x3K-79-kI7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kzc-fx-QfX"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="zar-Xd-AVi" id="vVS-f6-W8W"/>
+                        <outlet property="overviewTextView" destination="GPF-sO-TQ6" id="N9E-uq-Sm1"/>
+                        <outlet property="posterImageView" destination="FzW-zn-gxm" id="ti2-7L-xot"/>
+                        <outlet property="ratingLabel" destination="c7g-Y6-EqJ" id="iqk-VK-FBK"/>
+                        <outlet property="titleLabel" destination="ZPH-rl-90w" id="ZPi-A5-71n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdh-xG-EB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="121"/>
+            <point key="canvasLocation" x="1410" y="120.4225352112676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="J0i-wF-Pkw">
@@ -138,6 +185,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

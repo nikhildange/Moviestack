@@ -43,14 +43,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         gradient.frame = CGRect(x: 0, y: CGFloat(posterCellHeight/2), width: CGFloat(posterCellWidth), height: CGFloat(posterCellHeight))
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradient.locations = [0.0, 1.2]
-        cell.movieImage.layer.addSublayer(gradient)//insertSublayer(gradient, at: 0)
-        
-        cell.movieImage.sd_setImage(with: URL.init(string: "https://image.tmdb.org/t/p/w130/"+movie.poster_path), placeholderImage: nil, options: [], completed: nil)
+        cell.movieImage.layer.addSublayer(gradient)
+        cell.movieImage.sd_setImage(with: URL.init(string: "https://image.tmdb.org/t/p/w130/"+movie.poster_path), placeholderImage: UIImage.init(named: "movie_placeholder"), options: [], completed: nil)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: posterCellWidth, height: posterCellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(movieDataSource.movies[indexPath.row])
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewControllerID") as! DetailViewController
+        vc.movieInfo = movieDataSource.movies[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
