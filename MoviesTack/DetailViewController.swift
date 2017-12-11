@@ -17,14 +17,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var overviewTextView: UITextView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if let movie = movieInfo  {
             posterImageView.sd_showActivityIndicatorView()
             if movie.poster_path != nil {
-            posterImageView.sd_setImage(with: URL.init(string: "https://image.tmdb.org/t/p/w300/"+movie.poster_path!), placeholderImage: UIImage.init(named: "movie_placeholder"), options: [], completed: nil)
+                //Downloading Image of 300 width
+                posterImageView.sd_setImage(with: URL.init(string: "https://image.tmdb.org/t/p/w300/"+movie.poster_path!), placeholderImage: UIImage.init(named: "movie_placeholder"), options: [], completed: nil)
             }
             else {
                 posterImageView.image = UIImage.init(named: "movie_placeholder")

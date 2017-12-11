@@ -22,7 +22,7 @@ struct MovieResponse : Codable {
     }
 }
 
-enum call_type {
+enum call_type {    // API call type
     case popular
     case top_rated
     case search(text: String)
@@ -58,12 +58,13 @@ class MovieDataSource {
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             if error != nil {
                 print("API Error: "+error!.localizedDescription)
+                completion(false)
             }
             guard let data = data else { return }
-            //Implement JSON decoding and parsing
             do {
                 let responseData = try JSONDecoder().decode(MovieResponse.self, from: data)
 //                print(responseData)
