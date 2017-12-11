@@ -23,11 +23,21 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         if let movie = movieInfo  {
             posterImageView.sd_showActivityIndicatorView()
-            posterImageView.sd_setImage(with: URL.init(string: "https://image.tmdb.org/t/p/w300/"+movie.poster_path), placeholderImage: UIImage.init(named: "movie_placeholder"), options: [], completed: nil)
+            if movie.poster_path != nil {
+            posterImageView.sd_setImage(with: URL.init(string: "https://image.tmdb.org/t/p/w300/"+movie.poster_path!), placeholderImage: UIImage.init(named: "movie_placeholder"), options: [], completed: nil)
+            }
+            else {
+                posterImageView.image = UIImage.init(named: "movie_placeholder")
+            }
             titleLabel.text = movie.original_title.uppercased()
             dateLabel.text = movie.release_date
             ratingLabel.text = "⭐️ "+String(movie.vote_average)
             overviewTextView.text = movie.overview
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.overviewTextView.setContentOffset(CGPoint.zero, animated: false)
     }
 }
